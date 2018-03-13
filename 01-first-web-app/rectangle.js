@@ -1,24 +1,25 @@
-var width =  document.getElementById('rectangle-width');
-var height = document.getElementById('rectangle-height');
-var tipone = document.getElementById('tip-one');
-var tiptwo = document.getElementById('tip-two');
-var calc = document.getElementById('rectangle-calc');
-var perim = document.getElementById('rectangle-perimeter');
-var area = document.getElementById('rectangle-area');
+window.onload = function(){
+  var width =  document.getElementById('rectangle-width');
+  var height = document.getElementById('rectangle-height');
+  var tipone = document.getElementById('tip-one');
+  var tiptwo = document.getElementById('tip-two');
+  var calc = document.getElementById('rectangle-calc');
+  var perim = document.getElementById('rectangle-perimeter');
+  var area = document.getElementById('rectangle-area');
 
-
- //宽度输入框自动获得焦点
-  width.focus();
-
+width.focus();
  width.onblur = function(){
   if(width.value == ''){
      tipone.innerHTML = '宽度不能为空！';
+     width.focus();
   }
-  if(isNaN(width.value)== true){
+ else if(isNaN(width.value)== true){
      tipone.innerHTML = '宽度必须为数值';
+     width.focus();
   }
-  if(window.Number(width.value) < 0){
+ else if(window.Number(width.value) < 0){
     tipone.innerHTML = '宽度必须大于零';
+    width.focus();
   }
   else{
     tipone.innerHTML = '';
@@ -28,20 +29,26 @@ var area = document.getElementById('rectangle-area');
  height.onblur = function(){
   if(height.value == ''){
      tiptwo.innerHTML = '高度不能为空！';
+     height.focus();
   }
-  if(isNaN(height.value)== true){
+  else if(isNaN(height.value)== true){
      tiptwo.innerHTML = '高度必须为数值';
+     height.focus();
   }
-  if(window.Number(height.value) < 0){
+  else if(window.Number(height.value) < 0){
      tiptwo.innerHTML = '高度必须大于零';
+     height.focus();
   }
   else{
      tiptwo.innerHTML = '';
   }
+
  }
 
-calc.onclick = function(){
-    perim.value = 2 * parseFloat(width.value) + 2 * parseFloat(height.value);
-    area.value = (width.value) * (height.value);
+ calc.onclick = function(){
+   var wid = width.value;
+   var hei = height.value;
+   perim.value = 2 * parseFloat(wid) + 2 * parseFloat(hei);
+   area.value =parseFloat(wid) * parseFloat(hei);
  }
-
+};
