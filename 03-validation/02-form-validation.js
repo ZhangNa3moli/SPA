@@ -6,74 +6,68 @@ window.onload = function(){
   var calc = document.getElementById('rectangle-calc');
   var perim = document.getElementById('rectangle-perimeter');
   var area = document.getElementById('rectangle-area');
-  var wid = width.value;
-  var hei = height.value;
+ 
 
+//自动获得宽度输入框焦点
+ width.focus();
 
-width.focus();
- width.onblur = function(){
+ calc.onclick = function(){
+   var wid = width.value;
+   var hei = height.value;
+
+   //宽度数据合法性校验
   if(width.value == ''){
      tipone.innerHTML = '宽度不能为空！';
      width.focus();
-     perim.innerHTML = '';
-     area.innerHTML = '';
-
   }
  else if(isNaN(width.value)== true){
      tipone.innerHTML = '宽度必须为数值';
      width.focus();
-     perim.innerHTML = '';
-     area.innerHTML = '';
+
   }
  else if(window.Number(width.value) < 0){
     tipone.innerHTML = '宽度必须大于零';
     width.focus();
-    perim.innerHTML = '';
-    area.innerHTML = '';
+
   }
   else{
     tipone.innerHTML = '';
   }
-}
 
- height.onblur = function(){
+ //高度数据合法性校验
   if(height.value == ''){
      tiptwo.innerHTML = '高度不能为空！';
      height.focus();
-     perim.innerHTML = '';
-     area.innerHTML = '';
+
   }
   else if(isNaN(height.value)== true){
      tiptwo.innerHTML = '高度必须为数值';
      height.focus();
-     perim.innerHTML = '';
-     area.innerHTML = '';
+
   }
   else if(window.Number(height.value) < 0){
      tiptwo.innerHTML = '高度必须大于零';
      height.focus();
-     perim.innerHTML = '';
-     area.innerHTML = '';
+
   }
   else{
      tiptwo.innerHTML = '';
   }
-
- }
- 
- calc.onclick = function(){
-   var wid = width.value;
-   var hei = height.value;
-   if(tipone.innerHTML == ''&& tiptwo.innerHTML == ''){
-      perim.value = roundFractional(wid * 2 + hei * 2, 2);
-      area.value = roundFractional(wid * hei, 2);
-
+//宽度高度合法性校验
+//两个输入框都不符合条件时，只显示宽度输入框的提示信息
+  if(tipone.innerHTML !== '' && tiptwo.innerHTML !== ''){
+    tiptwo.innerHTML = '';
+  }
+  //两个输入框都符合条件时，才进行计算
+  if(tipone.innerHTML == '' && tiptwo.innerHTML == ''){
+    perim.value = roundFractional(wid * 2 + hei * 2, 2);
+    area.value = roundFractional(wid * hei, 2);
    }
-   else{
-     perim.innerHTML = '';
-     area.innerHTML = '';
-   }
+  else{
+    perim.innerHTML = '';
+    area.innerHTML = ''
  }
+};
  /**
   * 小数点后面保留第n位
   *

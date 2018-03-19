@@ -1,0 +1,39 @@
+.rectangle{
+  width:400px;
+  margin:100px auto;
+  font-size:18px;
+}
+input{
+  font-size:16px;
+  padding-left:5px;
+}
+span{
+  font-size:16px;
+  color:red;
+}
+input:invalid+span:after{
+  content:'×';
+  color:red;
+}
+input:valid+span:after{
+  content:'√';
+  color:green;
+}
+#rectangle-calc{
+  width:60px;
+  margin-left:59px;
+  margin-top:8px;
+}
+#tip-one,
+#tip-two{
+  color:red;
+  font-size:15px;
+  margin-left:59px;
+}
+#rectangle-perimeter{
+  margin-top:10px;
+  margin-bottom:15px;
+}
+#rectangle-area{
+  margin-top:10px;
+}

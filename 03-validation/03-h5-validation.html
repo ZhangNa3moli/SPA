@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>矩形计算器</title>
+  <link rel="stylesheet" href="03-h5-validation.css">
+</head>
+<body>
+<div class="rectangle">
+  <form class="form">
+    <label for="">宽度：</label>
+    <input id="rectangle-width" type="number" min="0" step="0.00001"  autofocus required >
+    <span></span>
+    <br/>
+
+    <label for="">高度：</label>
+    <input id="rectangle-height" type="number" min="0" step="0.00001" required >
+    <span></span>
+    <br/>
+
+    <input id="rectangle-calc" type="submit" value="计算">
+  </form>
+   
+ 
+    <label for="">周长：</label>
+    <input id="rectangle-perimeter" type="textbox" disabled="disabled">
+    <br/>
+
+    <label for="">面积：</label>
+    <input id="rectangle-area" type="textbox" disabled="disabled">
+</div>
+  
+</body>                                  
+<script src="03-h5-validation.js"></script>
+</html>
