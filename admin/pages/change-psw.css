@@ -1,0 +1,41 @@
+*{
+  margin:0;
+  padding: 0;
+}
+html body{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.admin-app-stage{
+  position: absolute;
+  top:70px;
+  left: 200px;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+}
+.change-password-panel{
+  margin: 50px 50px;
+}
+.change-password-panel input{
+  width: 198px;
+  height:38px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding-left:10px;
+  border: 1px solid #d2d2d2; 
+  outline: none;
+}
+.change-password-panel input[type="submit"]{
+  padding-left: 0;
+  color:white;
+  background-color: #009688;
+  width: 60px
+}
+.change-password-panel input[type="reset"]{
+  padding-left: 0;
+  color:black;
+  background-color: white;
+  width: 60px
+}

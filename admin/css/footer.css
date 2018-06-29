@@ -1,0 +1,14 @@
+.admin-app-footer{
+	position: absolute;
+	bottom: 0;
+	height: 36px;
+	left: 200px;
+	right: 0;
+	background-color: #e2e2e2;
+	
+}
+p{
+	text-align: center;
+	margin-top: 10px;
+	color: #666;
+}
